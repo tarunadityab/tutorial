@@ -1,0 +1,21 @@
+apiVersion: 0.3.0
+environments:
+  cdk:
+    destination:
+      namespace: seldon
+      server: https://kubernetes.docker.internal:6443
+    k8sVersion: v1.14.3
+    path: cdk
+  default:
+    destination:
+      namespace: seldon
+      server: https://kubernetes.docker.internal:6443
+    k8sVersion: v1.14.3
+    path: default
+kind: ksonnet.io/app
+name: tutorial
+registries:
+  incubator:
+    protocol: github
+    uri: github.com/ksonnet/parts/tree/master/incubator
+version: 0.0.1
